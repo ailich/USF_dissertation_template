@@ -1,12 +1,7 @@
----
-title: "README"
-author: "Alexander Ilich"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-output: 
-  github_document:
-    toc: true
-    toc_depth: 6
----
+README
+================
+Author: Alexander Ilich
+
 # What is this repository for?
 
 This repository contains files to provide an Rmarkdown document that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines.
