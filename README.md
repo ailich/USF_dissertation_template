@@ -22,6 +22,12 @@ The repository is structured using the [bookdown project structure](https://book
 
 -   Child Documents: The various parts of your dissertation (e.g. 01_Chapter 1.Rmd)
 
+-   `latex_preamble.tex`: This is the latex preamble code that modifies the Latex "report" document class formatting to make it USF ETD compliant.
+
+-   `*.csl` file: csl files specify the citation format. If you wish to change the citation style, you can download one and change the csl field in the YAML header of `index.Rmd` You can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
+
+-   `*.bib`: .bib files include your references. All references mentioned in your dissertation must be included in the `.bib` file.
+
 # Rendering the Document
 
 To render the book you can go to the "Build" tab in Rstudio and click "Build Book." You can also do this in command line using a call to `bookdown::render_book`.
@@ -42,59 +48,57 @@ This contains the abstract.
 
 These Rmd files contain your chapters. `01_Chapter1.Rmd` has a call to `\pagenumbering{arabic}`. This resets the numbering from roman numerals to normal numbers.
 
-he csl specifies the citation format, and the bibliography specifies where your references are located.
+The csl specifies the citation format, and the bibliography specifies where your references are located.
 
-## latex_preamble.tex
+## Bibiography and Citations
 
-This is the latex code that controls formatting of the document.
+### Important Files
 
-## Citations
+The two files necessary for using citations are a `.csl` file which specifies the citation style and a `.bib` file which contains all the references mentioned in your dissertation.
 
-### Citation Style
+If you wish to change the citation style, you can download one and change the csl field in the YAML header of `index.Rmd` You can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
 
-I have included a "csl" file which is a file specifying the citation format. If you wish to change the citation style, you can download one and change the csl field in the YAML header of the parent document. YOu can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
+### Connecting a .bib file to a Reference Managers
 
-### Bibliography
-
-Rstudio's visual markdown editor has the option to insert citations under the "insert" menu. I have included a "references.bib file" as an example. You have several options here:
+Rstudio's visual markdown editor has the option to insert citations under the "insert" menu. I have included a "references.bib file" as an example. There are several options for building a `.bib` file.
 
 -   Option 1: Export your references from your reference manager to a BibTex file and use that.
 
     -   Pros:
 
-        -   Easily portable to a new computer since the ".bib" file is located in the project directory
+        -   Easily portable to a new computer since the `.bib` file is located in the project directory
 
     -   Cons:
 
-        -   You need to re-export your ".bib" file and copy it over whenever you add new references
+        -   You need to re-export your `.bib` file and copy it over whenever you add new references
 
--   Option 2: If you use Zotero, you can link Rmarkdown with Zotero under "Tools \> Global Options \> Rmarkdown \> Citations." Every time you add a reference from your Zotero library it will automatically be added to your ".bib" file.
+-   Option 2: If you use Zotero, you can link Rmarkdown with Zotero under "Tools \> Global Options \> Rmarkdown \> Citations." Every time you add a reference from your Zotero library it will automatically be added to your `.bib` file.
 
     -   Pros:
 
-        -   Easily portable to a new computer since the ".bib" file is located in the project directory
+        -   Easily portable to a new computer since the `.bib` file is located in the project directory
 
-        -   You have access to your full Zotero library and don't need to re-export the ".bib" file since Rstudio automatically adds to the ".bib" file
+        -   You have access to your full Zotero library and don't need to re-export the `.bib` file since Rstudio automatically adds to the `.bib` file
 
     -   Cons:
 
-        -   If you realize something is wrong in a reference and fix it in Zotero you cannot (as far as I know of) automatically update this in your ".bib" file as Rstudio does not sync your Zotero and ".bib" file, it just adds the reference as is from your Zotero library if it is not already in your ".bib" file.
+        -   If you realize something is wrong in a reference and fix it in Zotero you cannot (as far as I know of) automatically update this in your `.bib` file as Rstudio does not sync your Zotero and `.bib` file, it just adds the reference as is from your Zotero library as you go if it is not already in your `.bib` file.
 
--   Option 3: You can get the [Better BibTex extension for Zotero](https://retorque.re/zotero-better-bibtex/) and [set up auto-export](https://retorque.re/zotero-better-bibtex/exporting/auto/) to create an always up to date ".bib" file that is synced with your Zotero Library (my preferred option). Most of the cons for this section can be addressed by using an external auto-updated ".bib" file while working on the document, but copying over a static version of the ".bib" project once the manuscript is finished and updating the YAML to now use the static version that is contained within the repository.
+-   Option 3 (my preferred option): You can get the [Better BibTex extension for Zotero](https://retorque.re/zotero-better-bibtex/) and [set up auto-export](https://retorque.re/zotero-better-bibtex/exporting/auto/) to create an always up to date `.bib` file that is synced with your Zotero Library. Most of the cons for this section can be addressed by using an external auto-updated `.bib` file while working on the document, but copying over a static version of the `.bib` file once the manuscript is finished and updating the YAML in `index.Rmd` to now use that.
 
     -   Pros:
 
-        -   You have access to your full Zotero library and don't need to re-export the ".bib" file
+        -   You have access to your full Zotero library and don't need to re-export the `.bib` file
 
         -   If you make a changes in your Zotero library, they will be updated in your Rmarkdown citations/bibliography
 
     -   Cons:
 
-        -   If you delete a reference from your Zotero Library, it will be deleted from the ".bib" file and your Rmarkdown document will not be able to find the reference.
+        -   If you delete a reference from your Zotero Library, it will be deleted from the `.bib` file and your Rmarkdown document will not be able to find the reference.
 
         -   If you edit information that changes the "citation key" (e.g. author/year) this can break the linkage between the .bib file and the citation in your Rmarkdown document so you will need to go into the text and re-insert these references
 
-        -   It is not easily portable to a new computer since the ".bib" file is likely located outside the project directory.
+        -   It is not easily portable to a new computer since the `.bib` file is likely located outside the project directory.
 
 # Tables, Figures, Equations and Cross-Referencing
 
@@ -110,21 +114,11 @@ Tables can be further customized using the `kableExtra` package (e.g. editing fo
 
 ### Equations
 
-You can add inline and display math from the insert tab in the visual markdown editor in Rstudio or by enclosing it within single or double $.
+You can add inline and display math from the insert tab in the visual markdown editor in Rstudio or by enclosing it within single or double \$.
 
 Additionally, you can insert numbered equations. For example:
 
-\\begin{equation} \\
-
-Y=mx+b \\
-
-(\\\#eq:NameOfEquation) \\
-
-\\end{equation} \\
-
-You can create numbered equations with a
-
-Something about equations
+![](Figures/numbered_equation.png)
 
 ## Cross-referencing
 
@@ -143,3 +137,5 @@ ETD formatting requirements can be found on the [Formatting Requirements section
 # Bookdown Resources
 
 <https://bookdown.org/yihui/bookdown/>
+
+<https://github.com/rstudio/bookdown>
