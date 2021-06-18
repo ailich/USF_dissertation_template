@@ -6,7 +6,7 @@ Author: Alexander Ilich
 
 This repository contains files to provide an Rmarkdown document that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines.
 
-**NOTE: THIS HAS NOT NEEM TESTED YET ON A REAL DISSERTATION.**
+**NOTE: THIS HAS NOT BEEN TESTED YET ON A REAL DISSERTATION.**
 
 # How can I use this?
 
