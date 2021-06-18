@@ -1,0 +1,17 @@
+# (APPENDIX) Appendix {-}
+# Name of Appendix
+
+```{r iris-data-fig, fig.cap="sepal length vs sepal width of the iris data."}
+plot(iris$Sepal.Width, iris$Sepal.Length, xlab = "Sepal Width", ylab = "Sepal Length")
+```
+
+# Name of Appendix
+```{r}
+library(magrittr) #Get the pipe operator
+```
+
+```{r iris-data}
+knitr::kable(head(iris, 25),caption = "The iris data") %>%
+  kableExtra::kable_styling(font_size = 8, latex_options = "hold_position") #ETD guidelines allows fonts to go down to 8 in tables
+```
+

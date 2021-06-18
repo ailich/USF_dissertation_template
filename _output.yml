@@ -1,0 +1,11 @@
+bookdown::pdf_book:
+  keep_tex: false
+  number_sections: true
+  toc: false
+  includes:
+    extra_dependencies: ["flafter"]
+    in_header: "latex_preamble.tex"
+
+bookdown::word_document2:
+  number_sections: true
+  toc: true

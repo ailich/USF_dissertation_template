@@ -6,6 +6,8 @@ Author: Alexander Ilich
 
 This repository contains files to provide an Rmarkdown document that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines.
 
+**NOTE: THIS HAS NOT NEEM TESTED YET ON A REAL DISSERTATION.**
+
 # How can I use this?
 
 You can use this by cloning/downloading this repository. When using this I highly recommend using an RProject with version control and Rstudio \>= 1.4 so that you have the visual markdown editor and built in citations.

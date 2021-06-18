@@ -1,0 +1,97 @@
+```{=latex}
+%TITLE PAGE LATEX CODE
+\pagenumbering{gobble} %No page numbering
+
+\begin{centering}
+
+\vspace*{0.55in} %This seems to line title up at 2 inches
+
+\doublespacing %Title should be double spaced
+(This is the Title of the Thesis/Dissertation)
+
+\singlespacing
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+by
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+(Author Name)
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+A (thesis or dissertation) submitted in partial fulfillment \\
+of the requirements for the degree of \\
+(Doctor of Philosophy or Master of Science) in (Subject) \\
+with a concentration in (Concentration) \\
+Department of (Department Name) \\
+(College Name) \\
+University of South Florida
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+Major Professor: (Professor, PhD.) \\
+(Comittee Member 1, PhD.) \\
+(Comittee Member 2, PhD.) \\
+(Comittee Member 3, PhD.) \\
+(Comittee Member 4, PhD.) \\
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+Date of Approval: \\
+(Month Day, Year)
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+Keywords: (Keyword 1, Keyword 2, Keyword 3, Keyword 4)
+
+\vspace{\baselineskip}
+
+Copyright \copyright\ (Year, Author Name) 
+
+\end{centering}
+```
+```{=tex}
+\newpage
+\pagenumbering{roman}
+```
+# Dedication {.unnumbered}
+
+This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life.
+
+# Acknowledgments {.unnumbered}
+
+I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money.
+
+```{=latex}
+\setcounter{tocdepth}{6} %Table of contents goes to level 6 headings
+\cftdot
+\singlespacing
+\tableofcontents  % Create List of Tables in Latex
+```
+\newpage
+
+```{=latex}
+\singlespacing
+\listoftables % Create List of Tables in Latex
+\addcontentsline{toc}{chapter}{List of Tables}
+```
+\newpage
+
+```{=latex}
+\singlespacing
+\listoffigures % Create List of Tables in Latex
+\addcontentsline{toc}{chapter}{List of Figures}
+```
+\doublespacing

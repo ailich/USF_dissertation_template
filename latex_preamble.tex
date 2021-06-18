@@ -1,0 +1,67 @@
+%General Formatting
+\usepackage{setspace}\doublespacing %Double Spacing
+\usepackage{sectsty}\allsectionsfont{\normalsize} % Make all font size 12
+\usepackage[all]{nowidow} %Prevent "orphans and widows"
+\usepackage{booktabs} %Publication quality tables
+
+%Table of Contents, List of Tables, List of Figures
+\usepackage[titles]{tocloft} %Load package for customizing table of contents/lists/figures (Adding titles makes it so that they are formatted the same as chapter titles)
+\renewcommand{\contentsname}{Table of Contents} %Rename Contents to Table of Contents
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % dots for chapters in table of contents
+\renewcommand{\cfttoctitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of Table of Contents
+\renewcommand{\cftloftitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of List of Tables
+\renewcommand{\cftlottitlefont}{\normalsize\bfseries} %Bold faced normal size font for List of Tables
+\renewcommand{\cftchapfont}{\normalsize} %Unbold chapter titles in table of contents
+\renewcommand{\cftchappagefont}{\normalfont} %Unbold chapter page numbers in table of contents
+%\renewcommand{\cftchappresnum}{Chapter~} %Precede number with "Chapter"
+%\renewcommand{\cftchapnumwidth}{2cm} %Add space between Chapter number and title
+\renewcommand{\cftfigpresnum}{Figure~} %Precede number with "Figure"
+\renewcommand{\cftfignumwidth}{2cm} %Add space between figure number and caption
+\renewcommand{\cfttabpresnum}{Table~}  %Precede number with "Table"
+\renewcommand{\cfttabnumwidth}{2cm} %Add space between table number and caption
+\renewcommand{\cftchapindent}{0in} %Set indents to increase by 0.5 inches per level
+\renewcommand{\cftsecindent}{0.5in} %Set indents to increase by 0.5 inches per level
+\renewcommand{\cftsubsecindent}{1in} %Set indents to increase by 0.5 inches per level
+\renewcommand{\cftsubsubsecindent}{1.5in} %Set indents to increase by 0.5 inches per level
+\renewcommand{\cftparaindent}{2in} %Set indents to increase by 0.5 inches per level
+\renewcommand{\cftsubparaindent}{2.5in} %Set indents to increase by 0.5 inches per level
+
+\makeatletter
+\renewcommand\@tocrmarg{0.5in} % Make long titles wrap when they are 0.5 inches away from page numbers
+\makeatother
+
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace} %Prevents gap between chapters in List of Figures
+\addtocontents{lot}{\protect\noaddvspace} %Prevents gap between chapters in List of Tables
+
+%Chapter Headings
+\usepackage{titlesec}
+\titleformat{\chapter}[hang] %Make chapter number and title on same line
+{\normalfont\normalsize\bfseries}{\chaptertitlename\ \thechapter:}{1em}{} %Adjust title font formatting (normal, bold)
+\titlespacing{\chapter}{0pt}{40pt}{12pt} %{increases the left margin}{vertical space before the title}{separation between title and text}
+\titlespacing{\part}{0pt}{35pt}{12pt} %{increases the left margin}{vertical space before the title}{separation between title and text}
+
+%Appendix
+%\usepackage[titletoc]{appendix}
+
+\usepackage{tocloft}
+\usepackage{calc}
+\renewcommand{\cftchappresnum}{\chaptername\space}
+%\setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999~}}}
+\setlength{\cftchapnumwidth}{2cm}
+\makeatletter
+\g@addto@macro\appendix{%
+  \addtocontents{toc}{%
+    \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
+  }%
+}
+\newcommand*\annex{%
+  \renewcommand{\appendixname}{Annex}%
+  \setcounter{chapter}{0}
+  \addtocontents{toc}{%
+    \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
+  }%
+}
+
+\usepackage{blindtext}% only for dummy text
+%https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
