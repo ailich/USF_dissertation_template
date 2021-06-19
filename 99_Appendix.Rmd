@@ -10,8 +10,16 @@ plot(iris$Sepal.Width, iris$Sepal.Length, xlab = "Sepal Width", ylab = "Sepal Le
 library(magrittr) #Get the pipe operator
 ```
 
-```{r iris-data}
-knitr::kable(head(iris, 25),caption = "The iris data") %>%
-  kableExtra::kable_styling(font_size = 8, latex_options = "hold_position") #ETD guidelines allows fonts to go down to 8 in tables
+```{r iris-data, eval= knitr::is_latex_output()}
+#ETD guidelines allows fonts to go down to 8 in tables
+knitr::kable(head(iris, 25), caption = "The iris data") %>%
+  kableExtra::kable_styling(font_size = 8, latex_options = "hold_position")
+```
+
+```{r iris-data-word, eval= !knitr::is_latex_output()}
+#KableExtra does not play nice with word unless you use "simple" format
+#You can conditionally evaluate the chunks with the eval chunk option and knitr::is_latex_output function
+knitr::kable(head(iris, 25), format = "simple", caption = "The iris data") %>%
+  kableExtra::kable_styling(font_size = 8, latex_options = "hold_position")
 ```
 

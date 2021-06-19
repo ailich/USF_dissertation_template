@@ -64,13 +64,12 @@ Copyright \copyright\ (Year, Author Name)
 ```
 ```{=tex}
 \newpage
-\pagenumbering{roman}
 ```
-# Dedication {.unnumbered}
+# Dedication {.unlisted .unnumbered}
 
 This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life.
 
-# Acknowledgments {.unnumbered}
+# Acknowledgments {.unlisted .unnumbered}
 
 I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money.
 
@@ -79,6 +78,7 @@ I'd like to thank my advisor, my committee, my lab mates, my family, my friends,
 \cftdot
 \singlespacing
 \tableofcontents  % Create List of Tables in Latex
+\pagenumbering{roman}
 ```
 \newpage
 
@@ -94,4 +94,5 @@ I'd like to thank my advisor, my committee, my lab mates, my family, my friends,
 \listoffigures % Create List of Tables in Latex
 \addcontentsline{toc}{chapter}{List of Figures}
 ```
+\newpage
 \doublespacing

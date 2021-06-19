@@ -9,7 +9,11 @@ bibliography: "references.bib"
 always_allow_html: yes
 link-citations: yes
 ---
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+library(knitr)
+library(bookdown)
+library(kableExtra)
+
 knitr::opts_chunk$set(echo = FALSE, include=TRUE, warning = FALSE, message = FALSE)
 ```
 

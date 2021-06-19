@@ -9,3 +9,4 @@ bookdown::pdf_book:
 bookdown::word_document2:
   number_sections: true
   toc: true
+  toc_depth: 6

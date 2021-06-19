@@ -10,7 +10,7 @@ This repository contains files to provide an Rmarkdown document that is (hopeful
 
 # How can I use this?
 
-You can use this by cloning/downloading this repository. When using this I highly recommend using an RProject with version control and Rstudio \>= 1.4 so that you have the visual markdown editor and built in citations.
+You can use this by cloning/downloading this repository. When using this I highly recommend using an RProject with version control and Rstudio \>= 1.4 so that you have the visual markdown editor and built in citations.You also must install `bookdown`, `knitr`, and `kableExtra` packages.
 
 # Bookdown Project Structure
 
@@ -141,3 +141,5 @@ ETD formatting requirements can be found on the [Formatting Requirements section
 <https://bookdown.org/yihui/bookdown/>
 
 <https://github.com/rstudio/bookdown>
+
+<https://bookdown.org/yihui/rmarkdown-cookbook/>

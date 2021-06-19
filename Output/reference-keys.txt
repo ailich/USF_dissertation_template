@@ -6,7 +6,7 @@ tab:testtable-3
 fig:cars-plot-2
 eq:line
 fig:iris-data-fig
-tab:iris-data
+tab:iris-data-word
 my-chapter-title
 introduction
 methods
