@@ -4,13 +4,16 @@ Author: Alexander Ilich
 
 # What is this repository for?
 
-This repository contains files to provide an Rmarkdown document that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines.
+This repository contains files to render Rmarkdown documents into a PDF that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines.
 
 **NOTE: THIS HAS NOT BEEN TESTED YET ON A REAL DISSERTATION.**
 
 # How can I use this?
 
-You can use this by cloning/downloading this repository. When using this I highly recommend using an RProject with version control and Rstudio \>= 1.4 so that you have the visual markdown editor and built in citations.You also must install `bookdown`, `knitr`, and `kableExtra` packages.
+You can use this by cloning/downloading this repository. When using this I highly recommend using an RProject with version control and Rstudio \>= 1.4 so that you have the [visual markdown editor](https://rstudio.github.io/visual-markdown-editing/#/) with built in citation capabilities.
+
+## Packages and Dependencies
+You must install `bookdown`, `knitr`, `rmarkdown`, and `kableExtra` R packages. Additionally, you must have a LaTex distribution installed. You can install a lightweight distribution of LaTeX from R using the code `install.packages("tinytex")` and then `tinytex::install_tinytex()`. Also you can check if you have already have this with `tinytex::is_tinytex().` Alternatively you could also install a different LaTeX distribution on your computer such as [MiKTeX](https://miktex.org/) which is popular for Windows users.
 
 # Bookdown Project Structure
 
@@ -26,7 +29,7 @@ The repository is structured using the [bookdown project structure](https://book
 
 -   `latex_preamble.tex`: This is the latex preamble code that modifies the Latex "report" document class formatting to make it USF ETD compliant.
 
--   `*.csl` file: csl files specify the citation format. If you wish to change the citation style, you can download one and change the csl field in the YAML header of `index.Rmd` You can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
+-   `*.csl` file: .csl files specify the citation format. If you wish to change the citation style, you can download one and change the csl field in the YAML header of `index.Rmd` You can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
 
 -   `*.bib`: .bib files include your references. All references mentioned in your dissertation must be included in the `.bib` file.
 
@@ -40,7 +43,7 @@ Rendering the book will use the output directory specified in from `_bookdown.ym
 
 ## `00_0Prelim.Rmd`
 
-This document contains the title page, dedication, and acknowledgments. Go in here and replace the default information with yours (e.g. put in your title, college, advisor, etc). Note that the title page is coded in LaTeX. You should not need to mess with the formatting here, but will need to replace the relevant information which is enclosed in parentheses `()` . Also, note that in LaTex a `%` represents a comment and `\\` represents moving to the next line.
+This document contains the title page, dedication, and acknowledgments. For the title page, go in here and replace the default information with yours (e.g. put in your title, college, advisor, etc). Note that the title page is coded in LaTeX. You should not need to mess with the formatting here, but will need to replace the relevant information which is enclosed in parentheses `()` . Also, note that in LaTex a `%` represents a comment and `\\` represents moving to the next line.
 
 ## `00_Abstract.Rmd`
 
@@ -50,8 +53,6 @@ This contains the abstract.
 
 These Rmd files contain your chapters. `01_Chapter1.Rmd` has a call to `\pagenumbering{arabic}`. This resets the numbering from roman numerals to normal numbers.
 
-The csl specifies the citation format, and the bibliography specifies where your references are located.
-
 ## Bibiography and Citations
 
 ### Important Files
@@ -60,9 +61,9 @@ The two files necessary for using citations are a `.csl` file which specifies th
 
 If you wish to change the citation style, you can download one and change the csl field in the YAML header of `index.Rmd` You can find a lot of these csl files in the [Zotero Style Repository](https://www.zotero.org/styles).
 
-### Connecting a .bib file to a Reference Managers
+### Connecting a .bib file to a Reference Manager
 
-Rstudio's visual markdown editor has the option to insert citations under the "insert" menu. I have included a "references.bib file" as an example. There are several options for building a `.bib` file.
+[Rstudio's visual markdown editor](https://rstudio.github.io/visual-markdown-editing/#/) has the option to insert citations under the "insert" menu. I have included a `references.bib` file as an example. There are several options for building a `.bib` file.
 
 -   Option 1: Export your references from your reference manager to a BibTex file and use that.
 
@@ -126,20 +127,17 @@ Additionally, you can insert numbered equations. For example:
 
 You can use bookdown's cross-referencing feature to refer to figure/table/equation numbers in the text and have them autoupdate as you add, remove or reorder content. Cross-referencing is done using "Insert \> Cross Reference" in the visual markdown editor or by using \@ref(fig:ChunkName) for figures, \@ref(tab:ChunkName) for tables, and \@ref(eq:EquationName) for equations. This is why we must use named chunks for tables and figures and names in our equations since that is how bookdown can keep track of them and update numbering if things are added or reordered. Note, cross-referencing only displays the number in your text so you need to precede this with figure/table/equation. For access to cross-referencing and other important features we need to use PDF and word documents generated by the bookdown package (e.g. bookdown::pdf_book, bookdown::pdf_document2 and bookdown::word_document2 instead of just pdf_document and word_document).
 
-# Packages and Dependencies
-
-You must have a LaTex distribution installed to knit PDF's. You can install a lightweight distribution of LaTeX from R using the code `install.packages("tinytex")` and then `tinytex::install_tinytex()`. Also you can check if you have already have this with `tinytex::is_tinytex().` Alternatively you could also install a different LaTeX distribution on your computer such as [MiKTeX](https://miktex.org/) which is popular for Windows users.
-
-Additionally, this relies on the use of the knitr, rmarkdown, and bookdown R packages.
 
 # ETD Guidelines
 
 ETD formatting requirements can be found on the [Formatting Requirements section of their website](https://www.usf.edu/graduate-studies/students/electronic-thesis-dissertation/etd-formatting-requirements/). Additionally, I've gathered many of the PDFs from this site and placed them under the ETD guidelines folder.
 
-# Bookdown Resources
+# Bookdown/Rmarkdown Resources
 
-<https://bookdown.org/yihui/bookdown/>
+[Bookdown Book](https://bookdown.org/yihui/bookdown/)
 
-<https://github.com/rstudio/bookdown>
+[Bookdown Github](https://github.com/rstudio/bookdown)
 
-<https://bookdown.org/yihui/rmarkdown-cookbook/>
+[Rmarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+[Rstudio Visual Markdown Editor](https://rstudio.github.io/visual-markdown-editing/#/)
