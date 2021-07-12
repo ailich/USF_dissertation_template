@@ -2,6 +2,8 @@ README
 ================
 Author: Alexander Ilich
 
+**NOTE: ETD has informed me that this is not yet fully compliant with ETD formatting guidelines.**
+
 # What is this repository for?
 
 This repository contains files to render Rmarkdown documents into a PDF that is (hopefully) consistent with the University of South Florida ETD thesis/dissertation formatting guidelines. A word document can also be rendered but it will not be ETD compliant and will not contain a title page, list of tables, or list of figures.
