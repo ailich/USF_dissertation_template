@@ -6,8 +6,8 @@ fontsize: 10pt
 mainfont: Times New Roman
 csl: "elsevier-harvard.csl"
 bibliography: "references.bib"
-always_allow_html: yes
-link-citations: yes
+always_allow_html: no
+link-citations: no
 ---
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
 library(knitr)

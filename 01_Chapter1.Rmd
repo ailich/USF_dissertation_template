@@ -1,4 +1,4 @@
-# My Chapter Title
+# A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy
 
 \pagenumbering{arabic}
 
@@ -28,7 +28,7 @@ knitr::kable(summary(cars), caption = "Summary of the mtcars data.", booktabs=TR
 
 ###### Level 6
 
-### A Really Long Heading so I see what happens when it takes up more than one line just in case we're geeting crazy
+### A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy
 
 These are my first results (Figure \@ref(fig:cars-plot)).
 
@@ -40,8 +40,8 @@ plot(cars)  # a scatterplot
 And then I also got these results (Figure \@ref(fig:test-fig)).
 
 ```{r include=FALSE}
-png(filename = "Figures/pressure_plot.png",width = 5, height = 5, units = "in", res = 300)
-plot(pressure)
+png(filename = "Figures/pressure_plot.png",width = 5, height = 4, units = "in", res = 300)
+plot(pressure, main="Pressure Plot")
 dev.off()
 ```
 

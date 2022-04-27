@@ -1,5 +1,5 @@
 bookdown::pdf_book:
-  keep_tex: false
+  keep_tex: true
   number_sections: true
   toc: false
   includes:
