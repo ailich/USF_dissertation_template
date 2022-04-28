@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy
+=======
+# My Incredibly Long Chapter Title Incase We Need To Worry About Indenting The Chapter Titles Aswell Who Knows?
+>>>>>>> Stashed changes
 
 \pagenumbering{arabic}
 
@@ -26,7 +30,7 @@ knitr::kable(summary(cars), caption = "Summary of the mtcars data.", booktabs=TR
 
 ##### Level 5
 
-###### Level 6
+###### Level 6 Super long header to make sure it works at different levels just in case
 
 ### A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy
 
