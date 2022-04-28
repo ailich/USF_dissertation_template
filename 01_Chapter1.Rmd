@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-# A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy
-=======
-# My Incredibly Long Chapter Title Incase We Need To Worry About Indenting The Chapter Titles Aswell Who Knows?
->>>>>>> Stashed changes
-
 \pagenumbering{arabic}
 
 ## Introduction
