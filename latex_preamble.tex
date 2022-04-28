@@ -26,6 +26,7 @@
 \renewcommand{\cfttabnumwidth}{2cm} %Add space between table number and caption
 
 \renewcommand{\cftchapindent}{0.25in} %Set indents to increase by 0.5 inches per level (1)
+\renewcommand{\cftchapaftersnumb}{\hspace*{-0.635cm}} %hanging indent for sections that take up more than one line (level 2)
 
 \renewcommand{\cftsecindent}{0.75in} %Set indents to increase by 0.5 inches per level (2)
 \renewcommand{\cftsecnumwidth}{1.5cm} %off set hanging indent for long section lines below (level 2)
@@ -50,7 +51,7 @@
 
 
 \renewcommand{\cftchappresnum}{\chaptername\space} %Have Toc say "Chapter" followed by number 
-\setlength{\cftchapnumwidth}{2cm} %Space so caption doesn't overlap "Chapter" number in TOC
+\setlength{\cftchapnumwidth}{2.5cm} %Space so caption doesn't overlap "Chapter" number in TOC (added 0.5cm to offset hanging indent)
 
 %HANGING INDENTS
 %\renewcommand{\cftchapnumwidth}{1in} %Add space between Chapter number and title
