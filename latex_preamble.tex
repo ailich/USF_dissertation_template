@@ -3,53 +3,42 @@
 \usepackage{sectsty}\allsectionsfont{\normalsize} % Make all font size 12
 \usepackage[all]{nowidow} %Prevent "orphans and widows"
 \usepackage{booktabs} %Publication quality tables
-\usepackage{float}
-
-\makeatletter
-\setlength{\@fptop}{0pt} %Have floats start at the top of the page (https://texfaq.org/FAQ-vertposfp)
-\makeatother
 
 %Table of Contents, List of Tables, List of Figures
 \usepackage[titles]{tocloft} %Load package for customizing table of contents/lists/figures (Adding titles makes it so that they are formatted the same as chapter titles)
 \renewcommand{\contentsname}{Table of Contents} %Rename Contents to Table of Contents
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % dots for chapters in table of contents
 \renewcommand{\cfttoctitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of Table of Contents
-\renewcommand{\cftloftitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of List of Figures
+\renewcommand{\cftloftitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of List of Tables
 \renewcommand{\cftlottitlefont}{\normalsize\bfseries} %Bold faced normal size font for List of Tables
 \renewcommand{\cftchapfont}{\normalsize} %Unbold chapter titles in table of contents
 \renewcommand{\cftchappagefont}{\normalfont} %Unbold chapter page numbers in table of contents
 %\renewcommand{\cftchappresnum}{Chapter~} %Precede number with "Chapter"
 %\renewcommand{\cftchapnumwidth}{2cm} %Add space between Chapter number and title
 \renewcommand{\cftfigpresnum}{Figure~} %Precede number with "Figure"
-\renewcommand{\cftfignumwidth}{2cm} %Add space between figure number and caption
+\renewcommand{\cftfignumwidth}{2.5cm} %Add space between figure number and caption must offset for hanging caption below
+\renewcommand{\cftfigaftersnumb}{\hspace{-0.635cm}} %handing 0.25 in indent for long caption second line
 \renewcommand{\cfttabpresnum}{Table~}  %Precede number with "Table"
-\renewcommand{\cfttabnumwidth}{2cm} %Add space between table number and caption
+\renewcommand{\cfttabnumwidth}{2.5cm} %Add space between table number and caption need to offset for hang indent below
+\renewcommand{\cfttabaftersnumb}{\hspace{-0.635cm}} %hanging indent for table captions that take up more than one line
+\renewcommand{\cftchapindent}{0in} %Set indents to increase by 0.5 inches per level (level 1)
+\renewcommand{\cftsecindent}{0.5in} %Set indents to increase by 0.5 inches per level (level 2)
+\renewcommand{\cftsecnumwidth}{1.5cm} %off set hanging indent for long section lines below (level 2)
+\renewcommand{\cftsecaftersnumb}{\hspace{-0.635cm}} %hanging indent for sections that take up more than one line (level 2)
+\renewcommand{\cftsubsecindent}{1in} %Set indents to increase by 0.5 inches per level (level 3)
+\renewcommand{\cftsubsecnumwidth}{1.5cm} %off set hanging indent for long section lines below (level 3)
+\renewcommand{\cftsubsecaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 3)
+\renewcommand{\cftsubsubsecindent}{1.5in} %Set indents to increase by 0.5 inches per level (level 4)
+\renewcommand{\cftsubsubsecnumwidth}{1.8cm} %off set hanging indent for long section lines below (level 4)
+\renewcommand{\cftsubsubsecaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 4)
+\renewcommand{\cftparaindent}{2in} %Set indents to increase by 0.5 inches per level (level 5)
+\renewcommand{\cftparanumwidth}{2.1cm} %off set hanging indent for long section lines below (level 5)
+\renewcommand{\cftparaaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 5)
+\renewcommand{\cftsubparaindent}{2.5in} %Set indents to increase by 0.5 inches per level (level 6)
+\renewcommand{\cftsubparanumwidth}{2.4cm} %off set hanging indent for long section lines below (level 6)
+\renewcommand{\cftsubparaaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 6)
 
-\renewcommand{\cftchapindent}{0.25in} %Set indents to increase by 0.5 inches per level
-\renewcommand{\cftsecindent}{0.75in} %Set indents to increase by 0.5 inches per level
-\renewcommand{\cftsubsecindent}{1.25in} %Set indents to increase by 0.5 inches per level
-\renewcommand{\cftsubsubsecindent}{1.75in} %Set indents to increase by 0.5 inches per level
-\renewcommand{\cftparaindent}{2.25in} %Set indents to increase by 0.5 inches per level
-\renewcommand{\cftsubparaindent}{2.75in} %Set indents to increase by 0.5 inches per level
 
-\renewcommand{\cftchappresnum}{\chaptername\space} %Have Toc say "Chapter" followed by number 
-\setlength{\cftchapnumwidth}{2cm} %Space so caption doesn't overlap "Chapter" number in TOC
-
-%HANGING INDENTS
-%\renewcommand{\cftchapnumwidth}{1in} %Add space between Chapter number and title
-\advance\cftchapnumwidth 1in
-\advance\cftsubsecnumwidth 1.5em
-\renewcommand{\cftchapaftersnumb}{\hspace*{-0.25in}} %have first line in TOC entry be 0.25" before subsequent lines (hanging indent)
-% \renewcommand{\cftsecaftersnumb}{\hspace*{-0.25in}}
-% \renewcommand{\cftsubsecaftersnumb}{\hspace*{-0.25in}}
-% \renewcommand{\cftsubsubsecaftersnumb}{\hspace*{-0.25in}}
-% \renewcommand{\cftparaaftersnumb}{\hspace*{-0.25in}}
-%\renewcommand{\cftsubparaftersnumb}{\hspace*{-0.25in}}
-
-\setlength{\cftfigindent}{0pt}  % remove indentation from figures in lof
-\setlength{\cfttabindent}{0pt}  % remove indentation from tables in lot
-\setlength{\cftbeforetabskip}{\parskip}  %Spacing between list of table entries
-\setlength{\cftbeforefigskip}{\parskip}  %Spacing between list of figure entries
 
 \makeatletter
 \renewcommand\@tocrmarg{0.5in} % Make long titles wrap when they are 0.5 inches away from page numbers
@@ -68,10 +57,13 @@
 
 %Appendix
 %\usepackage[titletoc]{appendix}
+
+\usepackage{tocloft}
 \usepackage{calc}
-\usepackage{blindtext}% only for dummy text
-%https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
+\renewcommand{\cftchappresnum}{\chaptername\space}
 %\setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999~}}}
+\setlength{\cftchapnumwidth}{2.635cm}
+\renewcommand{\cftchapaftersnumb}{\hspace{-0.635cm}}
 \makeatletter
 \g@addto@macro\appendix{%
   \addtocontents{toc}{%
@@ -85,3 +77,6 @@
     \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
   }%
 }
+
+\usepackage{blindtext}% only for dummy text
+%https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
