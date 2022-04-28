@@ -97,42 +97,70 @@
 \usepackage{sectsty}\allsectionsfont{\normalsize} % Make all font size 12
 \usepackage[all]{nowidow} %Prevent "orphans and widows"
 \usepackage{booktabs} %Publication quality tables
+\usepackage{float}
+
+\makeatletter
+\setlength{\@fptop}{0pt} %Have floats start at the top of the page (https://texfaq.org/FAQ-vertposfp)
+\makeatother
 
 %Table of Contents, List of Tables, List of Figures
 \usepackage[titles]{tocloft} %Load package for customizing table of contents/lists/figures (Adding titles makes it so that they are formatted the same as chapter titles)
 \renewcommand{\contentsname}{Table of Contents} %Rename Contents to Table of Contents
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % dots for chapters in table of contents
 \renewcommand{\cfttoctitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of Table of Contents
-\renewcommand{\cftloftitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of List of Tables
+\renewcommand{\cftloftitlefont}{\normalsize\bfseries} %Bold faced normal size font for title of List of Figures
 \renewcommand{\cftlottitlefont}{\normalsize\bfseries} %Bold faced normal size font for List of Tables
 \renewcommand{\cftchapfont}{\normalsize} %Unbold chapter titles in table of contents
 \renewcommand{\cftchappagefont}{\normalfont} %Unbold chapter page numbers in table of contents
 %\renewcommand{\cftchappresnum}{Chapter~} %Precede number with "Chapter"
 %\renewcommand{\cftchapnumwidth}{2cm} %Add space between Chapter number and title
 \renewcommand{\cftfigpresnum}{Figure~} %Precede number with "Figure"
-\renewcommand{\cftfignumwidth}{2.5cm} %Add space between figure number and caption must offset for hanging caption below
-\renewcommand{\cftfigaftersnumb}{\hspace{-0.635cm}} %handing 0.25 in indent for long caption second line
+\renewcommand{\cftfignumwidth}{2cm} %Add space between figure number and caption
 \renewcommand{\cfttabpresnum}{Table~}  %Precede number with "Table"
-\renewcommand{\cfttabnumwidth}{2.5cm} %Add space between table number and caption need to offset for hang indent below
-\renewcommand{\cfttabaftersnumb}{\hspace{-0.635cm}} %hanging indent for table captions that take up more than one line
-\renewcommand{\cftchapindent}{0in} %Set indents to increase by 0.5 inches per level (level 1)
-\renewcommand{\cftsecindent}{0.5in} %Set indents to increase by 0.5 inches per level (level 2)
+\renewcommand{\cfttabnumwidth}{2cm} %Add space between table number and caption
+
+\renewcommand{\cftchapindent}{0.25in} %Set indents to increase by 0.5 inches per level (1)
+
+\renewcommand{\cftsecindent}{0.75in} %Set indents to increase by 0.5 inches per level (2)
 \renewcommand{\cftsecnumwidth}{1.5cm} %off set hanging indent for long section lines below (level 2)
-\renewcommand{\cftsecaftersnumb}{\hspace{-0.635cm}} %hanging indent for sections that take up more than one line (level 2)
-\renewcommand{\cftsubsecindent}{1in} %Set indents to increase by 0.5 inches per level (level 3)
-\renewcommand{\cftsubsecnumwidth}{1.5cm} %off set hanging indent for long section lines below (level 3)
-\renewcommand{\cftsubsecaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 3)
-\renewcommand{\cftsubsubsecindent}{1.5in} %Set indents to increase by 0.5 inches per level (level 4)
+\renewcommand{\cftsecaftersnumb}{\hspace*{-0.635cm}} %hanging indent for sections that take up more than one line (level 2)
+
+\renewcommand{\cftsubsecindent}{1.25in} %Set indents to increase by 0.5 inches per level (3)
+\renewcommand{\cftsubsecnumwidth}{1.7cm} %off set hanging indent for long section lines below (level 3)
+\renewcommand{\cftsubsecaftersnumb}{\hspace*{-0.635cm}}%hanging indent for sections that take up more than one line (level 3)
+
+\renewcommand{\cftsubsubsecindent}{1.75in} %Set indents to increase by 0.5 inches per level (4)
 \renewcommand{\cftsubsubsecnumwidth}{1.8cm} %off set hanging indent for long section lines below (level 4)
-\renewcommand{\cftsubsubsecaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 4)
-\renewcommand{\cftparaindent}{2in} %Set indents to increase by 0.5 inches per level (level 5)
+\renewcommand{\cftsubsubsecaftersnumb}{\hspace*{-0.635cm}}%hanging indent for sections that take up more than one line (level4)
+
+\renewcommand{\cftparaindent}{2.25in} %Set indents to increase by 0.5 inches per level (5)
 \renewcommand{\cftparanumwidth}{2.1cm} %off set hanging indent for long section lines below (level 5)
-\renewcommand{\cftparaaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 5)
-\renewcommand{\cftsubparaindent}{2.5in} %Set indents to increase by 0.5 inches per level (level 6)
+\renewcommand{\cftparaaftersnumb}{\hspace*{-0.635cm}}%hanging indent for sections that take up more than one line (level 5)
+
+\renewcommand{\cftsubparaindent}{2.75in} %Set indents to increase by 0.5 inches per level (6)
 \renewcommand{\cftsubparanumwidth}{2.4cm} %off set hanging indent for long section lines below (level 6)
-\renewcommand{\cftsubparaaftersnumb}{\hspace{-0.635cm}}%hanging indent for sections that take up more than one line (level 6)
+\renewcommand{\cftsubparaaftersnumb}{\hspace*{-0.635cm}}%hanging indent for sections that take up more than one line (level 6)
 
 
+
+\renewcommand{\cftchappresnum}{\chaptername\space} %Have Toc say "Chapter" followed by number 
+\setlength{\cftchapnumwidth}{2cm} %Space so caption doesn't overlap "Chapter" number in TOC
+
+%HANGING INDENTS
+%\renewcommand{\cftchapnumwidth}{1in} %Add space between Chapter number and title
+%\advance\cftchapnumwidth 1in
+%\advance\cftsubsecnumwidth 1.5em
+%\renewcommand{\cftchapaftersnumb}{\hspace*{-0.25in}} %have first line in TOC entry be 0.25" before subsequent lines (hanging indent)
+% \renewcommand{\cftsecaftersnumb}{\hspace*{-0.25in}}
+% \renewcommand{\cftsubsecaftersnumb}{\hspace*{-0.25in}}
+% \renewcommand{\cftsubsubsecaftersnumb}{\hspace*{-0.25in}}
+% \renewcommand{\cftparaaftersnumb}{\hspace*{-0.25in}}
+%\renewcommand{\cftsubparaftersnumb}{\hspace*{-0.25in}}
+
+\setlength{\cftfigindent}{0pt}  % remove indentation from figures in lof
+\setlength{\cfttabindent}{0pt}  % remove indentation from tables in lot
+\setlength{\cftbeforetabskip}{\parskip}  %Spacing between list of table entries
+\setlength{\cftbeforefigskip}{\parskip}  %Spacing between list of figure entries
 
 \makeatletter
 \renewcommand\@tocrmarg{0.5in} % Make long titles wrap when they are 0.5 inches away from page numbers
@@ -151,13 +179,10 @@
 
 %Appendix
 %\usepackage[titletoc]{appendix}
-
-\usepackage{tocloft}
 \usepackage{calc}
-\renewcommand{\cftchappresnum}{\chaptername\space}
+\usepackage{blindtext}% only for dummy text
+%https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
 %\setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999~}}}
-\setlength{\cftchapnumwidth}{2.635cm}
-\renewcommand{\cftchapaftersnumb}{\hspace{-0.635cm}}
 \makeatletter
 \g@addto@macro\appendix{%
   \addtocontents{toc}{%
@@ -171,9 +196,6 @@
     \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
   }%
 }
-
-\usepackage{blindtext}% only for dummy text
-%https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -197,16 +219,91 @@
 
 \begin{document}
 
+%TITLE PAGE LATEX CODE
+\pagenumbering{gobble} %No page numbering
+\begin{centering}
+\vspace*{0.55in} %This seems to line title up at 2 inches
+\doublespacing %Title should be double spaced
+(This is the Title of the Thesis/Dissertation that is really long to take up two lines so I can demonstrate it properly skips a line for long titles)
+\singlespacing
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+by\\
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+(Author Name)\\
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+A (thesis or dissertation) submitted in partial fulfillment \\
+of the requirements for the degree of \\
+(Doctor of Philosophy or Master of Science) in (Subject) \\
+with a concentration in (Concentration) \\
+(College Name) \\
+University of South Florida\\
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+Major Professor: (Professor, PhD.) \\
+(Committee Member 1, PhD.) \\
+(Committee Member 2, PhD.) \\
+(Committee Member 3, PhD.) \\
+(Committee Member 4, PhD.) \\
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+Date of Approval: \\
+(Month Day, Year)\\
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+Keywords: (Keyword 1, Keyword 2, Keyword 3, Keyword 4)\\
+\vspace{\baselineskip}
+Copyright \copyright\ (Year, Author Name) \\
+\end{centering}
+
+\newpage
+
 \hypertarget{dedication}{%
 \chapter*{Dedication}\label{dedication}}
 
-Placeholder
+This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life. This dissertation is dedicated to an important person in my life.
+
+\hypertarget{acknowledgments}{%
+\chapter*{Acknowledgments}\label{acknowledgments}}
+
+I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money. I'd like to thank my advisor, my committee, my lab mates, my family, my friends, and all the people that gave me money.
+
+\setcounter{tocdepth}{6} %Table of contents goes to level 6 headings
+\cftdot
+\singlespacing
+\tableofcontents  % Create Table of Contents in Latex
+\pagenumbering{roman}
+
+\newpage
+
+\singlespacing
+\listoftables % Create List of Tables in Latex
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\newpage
+
+\singlespacing
+\listoffigures % Create List of Figures in Latex
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\newpage
+\doublespacing
 
 \hypertarget{abstract}{%
 \chapter*{Abstract}\label{abstract}}
 \addcontentsline{toc}{chapter}{Abstract}
 
 This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found. This is a quick summary of what I found.
+
+\hypertarget{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\chapter{A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
 \pagenumbering{arabic}
 
@@ -239,23 +336,23 @@ This is how I did the thing with this data (Table \ref{tab:testtable})
 \end{tabular}
 \end{table}
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\hypertarget{results-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\section{Results A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{results-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
-\hypertarget{level-3}{%
-\subsection{Level 3}\label{level-3}}
+\hypertarget{level-3-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\subsection{Level 3 A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{level-3-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
-\hypertarget{level-4}{%
-\subsubsection{Level 4}\label{level-4}}
+\hypertarget{level-4-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\subsubsection{Level 4 A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{level-4-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
-\hypertarget{level-5}{%
-\paragraph{Level 5}\label{level-5}}
+\hypertarget{level-5-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\paragraph{Level 5 A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{level-5-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
-\hypertarget{level-6-super-long-header-to-make-sure-it-works-at-different-levels-just-in-case}{%
-\subparagraph{Level 6 Super long header to make sure it works at different levels just in case}\label{level-6-super-long-header-to-make-sure-it-works-at-different-levels-just-in-case}}
+\hypertarget{level-6-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
+\subparagraph{Level 6 A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{level-6-a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
 
-\hypertarget{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}{%
-\subsection{A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy}}
+\hypertarget{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy-1}{%
+\subsection{A Really Long Heading so I see what happens when it takes up more than one line just in case we're getting crazy}\label{a-really-long-heading-so-i-see-what-happens-when-it-takes-up-more-than-one-line-just-in-case-were-getting-crazy-1}}
 
 These are my first results (Figure \ref{fig:cars-plot}).
 
@@ -300,22 +397,76 @@ Now I tell you how this fits in the context of my field
 \hypertarget{my-chapter-title}{%
 \chapter{My Chapter Title}\label{my-chapter-title}}
 
-Placeholder
-
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
+
+Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again. Here we go again.
 
 \hypertarget{methods-1}{%
 \section{Methods}\label{methods-1}}
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+This is how I did the thing
+
+See Table \ref{tab:testtable-3}
+
+\begin{table}
+
+\caption[Summary of the mtcars data.]{\label{tab:testtable-3}Summary of the mtcars data. Sentence two.}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+  &     speed &      dist\\
+\hline
+ & Min.   : 4.0 & Min.   :  2.00\\
+\hline
+ & 1st Qu.:12.0 & 1st Qu.: 26.00\\
+\hline
+ & Median :15.0 & Median : 36.00\\
+\hline
+ & Mean   :15.4 & Mean   : 42.98\\
+\hline
+ & 3rd Qu.:19.0 & 3rd Qu.: 56.00\\
+\hline
+ & Max.   :25.0 & Max.   :120.00\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+These are more results (Figure \ref{fig:cars-plot-2}). Cross-referencing this figure is possible thanks to the bookdown package (Xie, 2016) and we can use the visual markdown editor from Rstudio to make writing in markdown easier (Allaire, 2012).
+
+\begin{figure}
+\centering
+\includegraphics{Dissertation_files/figure-latex/cars-plot-2-1.pdf}
+\caption{\label{fig:cars-plot-2}The cars data2.}
+\end{figure}
+
+Let's reference figure \ref{fig:cars-plot} from chapter 1 from chapter 2. And now let's reference some extra stuff contained in the appendix (Figure \ref{fig:iris-data-fig}).
 
 \hypertarget{an-equation-and-some-math}{%
 \subsection{An Equation and some math}\label{an-equation-and-some-math}}
 
+\begin{equation}
+  Y=mx+b 
+  \label{eq:line}
+\end{equation}
+
+Inline math example: \(1+1=2\)
+
+Display math example:
+
+\[
+2+2=4
+\]
+
+This is the equation of a line Equation \eqref{eq:line}
+
 \hypertarget{discussion-1}{%
 \section{Discussion}\label{discussion-1}}
+
+Now I tell you how this fits in the context of my field.
 
 \hypertarget{my-chapter-title-1}{%
 \chapter{My Chapter Title}\label{my-chapter-title-1}}
@@ -335,7 +486,13 @@ Ok it didn't fit together so well so I guess we should look at these things, but
 \addcontentsline{toc}{chapter}{References}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-allaire2012rstudio}{}}%
+Allaire, J., 2012. RStudio: Integrated development environment for r. Boston, MA 770, 394.
+
+\leavevmode\vadjust pre{\hypertarget{ref-xie2016bookdown}{}}%
+Xie, Y., 2016. Bookdown: Authoring books and technical documents with r markdown. CRC Press.
+
 \end{CSLReferences}
 
 \hypertarget{appendix-appendix}{%

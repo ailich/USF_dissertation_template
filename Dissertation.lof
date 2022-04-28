@@ -1,9 +1,10 @@
 \noaddvspace 
-\contentsline {figure}{\numberline {1}{\ignorespaces The cars data.}}{2}{figure.0.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces A really long figure caption so I see what happens when it takes up more than one line just in case we're getting crazy}}{3}{figure.0.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces The cars data2.}}{5}{figure.1.1}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces The cars data.}}{2}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces A really long figure caption so I see what happens when it takes up more than one line just in case we're getting crazy}}{3}{figure.1.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The cars data2.}}{6}{figure.2.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces sepal length vs sepal width of the iris data.}}{8}{figure.A.1}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces sepal length vs sepal width of the iris data.}}{9}{figure.A.1}%
 \addvspace {10\p@ }
